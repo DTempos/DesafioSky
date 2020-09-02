@@ -24,14 +24,14 @@ public class PageProgramacao extends BasePage {
 	}
 
 	public void colocarCursorSobreProgramaExibido() throws Exception {
-		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/h2", 15);
+		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/h2", 15);
 		Thread.sleep(2000);
-		dsl.mouseOver("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/h2");
+		dsl.mouseOver("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/h2");
 	}
 
 	public String getNomeExibidoProgramaGrade() throws Exception {
-		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/h2", 15);
-		String nomePrograma = dsl.obterTextoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/h2");
+		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/h2", 15);
+		String nomePrograma = dsl.obterTextoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/h2");
 		System.out.println(nomePrograma);
 
 		return nomePrograma;
@@ -40,9 +40,9 @@ public class PageProgramacao extends BasePage {
 	public List<String> getHorarioEscondidoGrade() throws Exception {
 		List<String> horario = new ArrayList<String>();
 
-		dsl.esperarElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]/div[2]/div[1]/p", 30);
+		dsl.esperarElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]/div[2]/div[1]/p", 30);
 		String duracao = dsl.obterAtributoElementoPorXpath(
-				"(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]/div[2]/div[1]/p", "#text");
+				"(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]/div[2]/div[1]/p", "#text");
 		System.out.println(duracao);
 
 		String[] separaHorario = duracao.split(" - ");
@@ -81,25 +81,25 @@ public class PageProgramacao extends BasePage {
 	}
 
 	public String getNomeEscondidoProgramaGrade() throws Exception {
-		dsl.esperarElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]/h2", 15);
-		String nomePrograma = dsl.obterTextoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]/h2");
+		dsl.esperarElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]/h2", 15);
+		String nomePrograma = dsl.obterTextoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]/h2");
 		System.out.println(nomePrograma);
 
 		return nomePrograma;
 	}
 
 	public void colocarCursorSobreProgramaEscondidoParaExibir() throws Exception {
-		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]", 15);
+		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]", 15);
 		Thread.sleep(2000);
-		dsl.mouseOver("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]/h2");
+		dsl.mouseOver("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]/h2");
 	}
 
 	public List<String> getHorarioExibidoGrade() throws Exception {
 		List<String> horario = new ArrayList<String>();
 
-		dsl.esperarElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/div[2]/div[1]/p", 30);
+		dsl.esperarElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/div[2]/div[1]/p", 30);
 		String duracao = dsl
-				.obterTextoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/div[2]/div[1]/p");
+				.obterTextoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/div[2]/div[1]/p");
 		System.out.println(duracao);
 
 		String[] separaHorario = duracao.split(" - ");
@@ -113,15 +113,15 @@ public class PageProgramacao extends BasePage {
 	}
 
 	public void clicarProgramaExibidoParaModal() throws Exception {
-		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/h2", 15);
+		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/h2", 15);
 		Thread.sleep(2000);
-		dsl.clicarPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[1]/h2");
+		dsl.clicarPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[1]/h2");
 	}
 
 	public void clicarProgramaEscondidoParaModal() throws Exception {
-		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]", 15);
+		dsl.visibilidadeElementoPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]", 15);
 		Thread.sleep(2000);
-		dsl.clicarPorXpath("(//*[@class = 'schedule-inner schedule-live'])[2]/div[2]");
+		dsl.clicarPorXpath("(//*[@class = 'schedule-inner schedule-live'])[1]/div[2]");
 	}
 
 	public void aguardarCarregamentoGrade() throws Exception {
